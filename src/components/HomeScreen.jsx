@@ -60,10 +60,10 @@ const HomeScreen = ({ onModeSelect }) => {
           onClick={() => handleModeSelect('ai')}
           text="Play vs AI"
         />
-        <Button 
-          onClick={() => handleModeSelect('online')}
-          text="Online Multiplayer"
-        />
+        {/* <Button  */}
+          {/* onClick={() => handleModeSelect('online')} */}
+          {/* text="Online Multiplayer" */}
+        {/* /> */}
       </ButtonContainer>
       <AudioControl />
     </Container>
