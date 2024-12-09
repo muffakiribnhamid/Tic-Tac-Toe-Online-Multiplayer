@@ -1,0 +1,35 @@
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  grid-template-rows: repeat(3, 100px);
+  gap: 5px;
+  margin: 20px auto;
+  background: rgba(149, 106, 250, 0.1);
+  padding: 10px;
+  border-radius: 15px;
+}
+
+.square {
+  width: 100px;
+  height: 100px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(149, 106, 250, 0.3);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 48px;
+  font-weight: bold;
+  color: #956afa;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.square:hover {
+  background: rgba(149, 106, 250, 0.2);
+}
+
+.highlight {
+  background: rgba(149, 106, 250, 0.3);
+  border-color: #956afa;
+}

@@ -3,28 +3,57 @@ import styled from 'styled-components';
 
 const Pattern = () => {
   return (
-    <StyledWrapper>
-      <div className="container" />
-    </StyledWrapper>
+    <PatternContainer>
+      <PatternGrid />
+    </PatternContainer>
   );
-}
+};
 
-const StyledWrapper = styled.div`
+const PatternContainer = styled.div`
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
   z-index: -1;
-  
-  .container {
-    width: 100%;
-    height: 100%;
-    --color: #E1E1E1;
-    background-color: #F3F3F3;
-    background-image: linear-gradient(0deg, transparent 24%, var(--color) 25%, var(--color) 26%, transparent 27%,transparent 74%, var(--color) 75%, var(--color) 76%, transparent 77%,transparent),
-        linear-gradient(90deg, transparent 24%, var(--color) 25%, var(--color) 26%, transparent 27%,transparent 74%, var(--color) 75%, var(--color) 76%, transparent 77%,transparent);
-    background-size: 55px 55px;
+  overflow: hidden;
+`;
+
+const PatternGrid = styled.div`
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  top: -50%;
+  left: -50%;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+  background-size: 30px 30px;
+  transform: perspective(500px) rotateX(45deg);
+  animation: moveGrid 20s linear infinite;
+
+  @keyframes moveGrid {
+    0% {
+      transform: perspective(500px) rotateX(45deg) translateY(0);
+    }
+    100% {
+      transform: perspective(500px) rotateX(45deg) translateY(30px);
+    }
+  }
+
+  @media (min-width: 1440px) {
+    width: 300%;
+    height: 300%;
+    top: -100%;
+    left: -100%;
+    background-size: 40px 40px;
+  }
+
+  @media (min-width: 2560px) {
+    width: 400%;
+    height: 400%;
+    top: -150%;
+    left: -150%;
+    background-size: 50px 50px;
   }
 `;
 
